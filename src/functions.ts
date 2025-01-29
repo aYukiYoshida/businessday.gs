@@ -135,7 +135,7 @@ export const getLastBusinessDayOfMonth = (
 ): Date => {
   const date = getLastDayOfMonth(year, month);
   const lastDayOfMonth = getLastDayOfMonth(year, month);
-  for (const d of [...Array(lastDayOfMonth.getDate()).keys()]) {
+  for (const d of [...Array(lastDayOfMonth.getDate()).keys()].reverse()) {
     if (isBusinessDay(date)) {
       break;
     }
