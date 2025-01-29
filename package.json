@@ -1,7 +1,7 @@
 {
-  "name": "gas-template",
-  "version": "1.0.0",
-  "description": "Template for Google Apps Script",
+  "name": "businessday.gs",
+  "version": "0.1.0",
+  "description": "Business day calculation module for Google Apps Script",
   "scripts": {
     "prepare": "npm-run-all prepare:*",
     "prepare:husky": "husky install",
@@ -27,7 +27,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aYukiYoshida/gas-template.git"
+    "url": "git+https://github.com/aYukiYoshida/businessday.gs.git"
   },
   "keywords": [
     "GAS"
@@ -35,9 +35,9 @@
   "author": "Yuki Yoshida <yuki.yoshida@access-company.com> (https://ayukiyoshida.github.io/tips/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/aYukiYoshida/gas-template/issues"
+    "url": "https://github.com/aYukiYoshida/businessday.gs/issues"
   },
-  "homepage": "https://github.com/aYukiYoshida/gas-template#readme",
+  "homepage": "https://github.com/aYukiYoshida/businessday.gs#readme",
   "devDependencies": {
     "@google/clasp": "^2.4.2",
     "@types/google-apps-script": "^1.0.76",

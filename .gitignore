@@ -134,7 +134,10 @@ Footer
 .node-version
 
 # clasp
-.clasp.json
+public/*
+!public/appsscript.json
+!public/.claspignore
+
 
 # mise
-.mise.toml
+mise.toml
