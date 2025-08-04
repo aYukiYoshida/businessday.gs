@@ -156,7 +156,7 @@ export const getBusinessDaysOfMonth = (
   const businessDaysOfMonth: Date[] = [];
   while (dayOfMonth) {
     if (isBusinessDay(dayOfMonth)) {
-      businessDaysOfMonth.push(dayOfMonth);
+      businessDaysOfMonth.push(new Date(dayOfMonth.getTime()));
     }
     if (dayOfMonth.getDate() === lastDayOfMonth.getDate()) {
       break;
