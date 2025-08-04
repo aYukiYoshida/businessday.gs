@@ -143,3 +143,25 @@ export const getLastBusinessDayOfMonth = (
   }
   return date;
 };
+
+/**
+ * 入力した月のすべての営業日を返す
+ */
+export const getBusinessDaysOfMonth = (
+  year: number,
+  monthIndex: number,
+): Date[] => {
+  const dayOfMonth: Date = getFirstDayOfMonth(year, monthIndex);
+  const lastDayOfMonth: Date = getLastDayOfMonth(year, monthIndex);
+  const businessDaysOfMonth: Date[] = [];
+  while (dayOfMonth) {
+    if (isBusinessDay(dayOfMonth)) {
+      businessDaysOfMonth.push(dayOfMonth);
+    }
+    if (dayOfMonth.getDate() === lastDayOfMonth.getDate()) {
+      break;
+    }
+    dayOfMonth.setDate(dayOfMonth.getDate() + 1);
+  }
+  return businessDaysOfMonth;
+};
