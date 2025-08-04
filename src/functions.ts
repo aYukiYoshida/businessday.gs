@@ -3,16 +3,16 @@ import properties from "./properties";
 /**
  * 入力した月の初日を返す
  */
-const getFirstDayOfMonth = (year: number, month: number): Date => {
-  const d = new Date(year, month, 1, 0);
+const getFirstDayOfMonth = (year: number, monthIndex: number): Date => {
+  const d = new Date(year, monthIndex, 1, 0);
   return d;
 };
 
 /**
  * 入力した日付の月の末日を返す
  */
-const getLastDayOfMonth = (year: number, month: number): Date => {
-  const d = new Date(year, month + 1, 0, 0);
+const getLastDayOfMonth = (year: number, monthIndex: number): Date => {
+  const d = new Date(year, monthIndex + 1, 0, 0);
   return d;
 };
 
@@ -113,10 +113,10 @@ export const isBusinessDay = (date: Date): boolean => {
  */
 export const getFirstBusinessDayOfMonth = (
   year: number,
-  month: number,
+  monthIndex: number,
 ): Date => {
-  const date = getFirstDayOfMonth(year, month);
-  const lastDayOfMonth = getLastDayOfMonth(year, month);
+  const date = getFirstDayOfMonth(year, monthIndex);
+  const lastDayOfMonth = getLastDayOfMonth(year, monthIndex);
   for (const d of [...Array(lastDayOfMonth.getDate()).keys()]) {
     if (isBusinessDay(date)) {
       break;
@@ -131,10 +131,10 @@ export const getFirstBusinessDayOfMonth = (
  */
 export const getLastBusinessDayOfMonth = (
   year: number,
-  month: number,
+  monthIndex: number,
 ): Date => {
-  const date = getLastDayOfMonth(year, month);
-  const lastDayOfMonth = getLastDayOfMonth(year, month);
+  const date = getLastDayOfMonth(year, monthIndex);
+  const lastDayOfMonth = getLastDayOfMonth(year, monthIndex);
   for (const d of [...Array(lastDayOfMonth.getDate()).keys()].reverse()) {
     if (isBusinessDay(date)) {
       break;
